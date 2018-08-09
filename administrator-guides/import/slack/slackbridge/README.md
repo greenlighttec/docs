@@ -24,3 +24,10 @@ Once enabled and added to rooms, SlackBridge will clone the room in Rocket.Chat 
 4. Restart you Rocket.chat server
 
 You can now add your newly created bot to any channel or private group you'd like to mirror.
+
+## Importing Private Channels from Slack
+
+Note that when channels are imported from slack the mirroring of a private group may not work correctly from RocketChat to Slack.
+Specificaly, your bot inside Slack will have no issues sending messages to RocketChat -however RocketChat does not appear to mirror to Slack. 
+I've found that removing the bot from the channel in Slack, deleting the private group inside RocketChat then re-inviting the bot will cause the private channel to be recreated in RocketChat and the bridge will work bidirectionally. 
+For non-private channels bi-directional communication is seamless.
